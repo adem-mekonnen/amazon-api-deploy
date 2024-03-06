@@ -6,11 +6,7 @@ dotenv.config();
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const app = express();
-app.use(
-  cors({
-    origin: "https://amazon-clone-by-adem.netlify.app",
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.get("/", (req, res) => {
   res.status(200).json({ message: "succes" });
